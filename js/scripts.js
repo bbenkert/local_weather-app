@@ -6,7 +6,12 @@ longitude = position.coords.longitude;
 var api = "https://fcc-weather-api.glitch.me/api/current?lat="+latitude+"&lon="+longitude+"";
 $.getJSON(api, function(wdat) {
 var weather = wdat.weather[0].main;
-console.log(weather);
+var description = wdat.weather[0].description;
+var icon = wdat.weather[0].icon;
+var windSpeed = wdat.wind.speed;
+var windDir = wdat.wind.deg;
+var celsius = wdat.main.temp;
+
 
 });
     });
