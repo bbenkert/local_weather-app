@@ -24,18 +24,17 @@ $(document).ready(function() {
         $("#icon").html('<img src="' + icon + '">');
         $("#temp").html(fahrenheit);
         $("#description").html(description);
-        $("#tempChanger").html('<b>&#8457;</b> | <i>&#8451;</i>');
-        $("#tempChanger").click(function(){
-            if(tempChanger === false){
-                $("#temp").html(fahrenheit);
-                $("#tempChanger").html('<b>&#8457;</b> | <i>&#8451;</i>');
-                tempChanger = true;
-            }
-            else {
-                $("#temp").html(celsius);
-                 $("#tempChanger").html('<b>&#8451;</b> | <i>&#8457;</i>');
-                 tempChanger = false;
-            }
+        $("#tempChanger").html("<b>&#8457;</b> | <i>&#8451;</i>");
+        $("#tempChanger").click(function() {
+          if (tempChanger === false) {
+            $("#temp").html(fahrenheit);
+            $("#tempChanger").html("<b>&#8457;</b> | <i>&#8451;</i>");
+            tempChanger = true;
+          } else {
+            $("#temp").html(celsius);
+            $("#tempChanger").html("<b>&#8451;</b> | <i>&#8457;</i>");
+            tempChanger = false;
+          }
         });
       });
     });
