@@ -20,11 +20,23 @@ $(document).ready(function() {
         var windDir = wdat.wind.deg;
         var celsius = wdat.main.temp;
         var fahrenheit = Math.round(celsius * 9 / 5 + 32);
-        var temp = fahrenheit;
         //Add data elements to page by ID
         $("#icon").html('<img src="' + icon + '">');
-        $("#temp").html(temp);
+        $("#temp").html(fahrenheit);
         $("#description").html(description);
+        $("#tempChanger").html('<b>&#8457;</b> | <i>&#8451;</i>');
+        $("#tempChanger").click(function(){
+            if(tempChanger === false){
+                $("#temp").html(fahrenheit);
+                $("#tempChanger").html('<b>&#8457;</b> | <i>&#8451;</i>');
+                tempChanger = true;
+            }
+            else {
+                $("#temp").html(celsius);
+                 $("#tempChanger").html('<b>&#8451;</b> | <i>&#8457;</i>');
+                 tempChanger = false;
+            }
+        });
       });
     });
     //Error alert if location data is unavaialble
